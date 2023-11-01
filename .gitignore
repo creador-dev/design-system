@@ -6,6 +6,7 @@ logs
 .npm
 npm-debug.log*
 package-lock.json
+yarn.lock
 
 .yarn-integrity
 yarn-debug.log*
