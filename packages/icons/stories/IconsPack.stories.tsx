@@ -1,11 +1,11 @@
-import React, { Fragment, Children } from "react";
+import React from "react";
 
 // Import required components.
 import dedent from "dedent";
 import docs from "./IconsPack.mdx";
 
 export default {
-  title: "Icons Pack",
+  title: "Icons/Page",
   parameters: {
     layout: "fullscreen",
     docs: {

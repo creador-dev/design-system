@@ -2,7 +2,7 @@
   "name": "icons",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
@@ -20,9 +20,10 @@
     "@storybook/nextjs": "^7.5.1",
     "@storybook/react": "^7.5.1",
     "@storybook/testing-library": "^0.2.2",
+    "@storybook/addon-a11y": "^7.5.2",
+    "dedent": "^0.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.5.1",
-    "dedent": "^0.7.0"
+    "storybook": "^7.5.1"
   }
 }
