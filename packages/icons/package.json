@@ -1,5 +1,5 @@
 {
-    "name": "@creador/icons",
+    "name": "@crd/icons",
     "version": "0.0.1",
     "description": "Icons.",
     "keywords": [],
@@ -13,6 +13,8 @@
     ],
     "license": "GPL-2.0",
     "main": "src/components/index.ts",
+    "input": "./src",
+    "output": "./dist",
     "directories": {
         "src": "src",
         "test": "__tests__"
@@ -28,17 +30,33 @@
         "url": "git+https://github.com/creador-dev/design-system.git"
     },
     "scripts": {
+        "prepare": "npm run clean",
         "clean": "rm -rf dist && rm -rf lib",
-        "build": "npx tsup",
-        "build:dev": "npx tsup --watch",
-        "build:fast": "tsup src",
-        "dev": "npm build:fast -- --watch",
+        "build": "gulp",
         "prepack": "clean-package",
-        "postpack": "clean-package restore"
+        "postpack": "clean-package restore",
+        "publish:test": "npm run prepare && npm version prerelease --git-tag-version=false && npm pack",
+        "publish:patch": "npm run prepare && npm version patch -m \"🚀 Publish Icons Pack %s\" && npm publish",
+        "publish:minor": "npm run prepare && npm version minor -m \"🚀 Publish Icons Pack %s\" && npm publish",
+        "publish:major": "npm run prepare && npm version major -m \"🚀 Publish Icons Pack %s\" && npm publish"
     },
     "bugs": {
         "url": "https://github.com/creador-dev/design-system/issues"
     },
     "homepage": "https://github.com/creador-dev/design-system#readme",
-    "devDependencies": {}
+    "devDependencies": {
+        "dedent": "^0.7.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-header": "^2.0.9",
+        "gulp-prettier": "^4.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "ts-dedent": "^2.2.0"
+    },
+    "dependencies": {
+        "@crd/utils": "^0.0.1"
+    }
 }

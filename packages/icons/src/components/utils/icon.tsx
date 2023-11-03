@@ -7,7 +7,7 @@ import React, {
 	ReactSVGElement,
 } from "react"
 
-import { generateClassNames, handleOnKeyDown, isEmpty } from "@creador/utils"
+import { generateClassNames, handleOnKeyDown, isEmpty } from "@crd/utils"
 
 import { IconProps } from "./icon.types"
 

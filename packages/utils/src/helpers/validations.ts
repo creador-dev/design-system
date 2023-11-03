@@ -81,6 +81,17 @@ const isString = (value: unknown) => "string" === typeof value
 const isEmpty = (value: string | undefined) => "" === value
 
 /**
+ * Capitalize text
+ *
+ * @param {string} string Text to be capitalized
+ *
+ * @return {string} Capitalize text
+ */
+const capitalizeText = (string: string) => {
+	return string?.charAt(0)?.toUpperCase() + string?.slice(1)
+}
+
+/**
  * Returns the content if the condition is true, otherwise returns undefined.
  *
  * @param {boolean} condition - Condition to match.
@@ -110,6 +121,7 @@ export {
 	isBoolean,
 	isNumber,
 	isEmpty,
+	capitalizeText,
 	isFunction,
 	isString,
 	conditionalValue,

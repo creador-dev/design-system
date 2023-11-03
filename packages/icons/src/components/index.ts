@@ -9,5 +9,5 @@ export type IconsModule = Record<IconsNamesType, React.ComponentType<IconProps>>
 // Usefull to get icons by name
 export default Icons as IconsModule
 
-// Usefull for importing Icons individually, ex. import { ExternalLink } from "@creador/icons"
+// Usefull for importing Icons individually, ex. import { ExternalLink } from "@crd/icons"
 export * from "./exports"
