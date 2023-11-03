@@ -35,18 +35,25 @@ Page.args = {
 Page.argTypes = {
   category: {
     name: "Category",
+    options: [
+      "all",
+      "status",
+      "action",
+      "state",
+      "navigation",
+      "social",
+      "global",
+    ],
     control: {
       type: "select",
-      options: {
-        "All Categories": "all",
-        Products: "products",
-        "Summary Box": "summary-box",
-        Status: "status",
-        Action: "action",
-        State: "state",
-        Navigation: "navigation",
-        "Social Media": "social",
-        Global: "global",
+      labels: {
+        all: "All Categories",
+        status: "Status",
+        action: "Action",
+        state: "State",
+        navigation: "Navigation",
+        social: "Social Media",
+        global: "Global",
       },
     },
   },

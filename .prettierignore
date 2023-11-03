@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore minified files:
+*.min.js
+*.min.css
+*.md
+*.mdx
