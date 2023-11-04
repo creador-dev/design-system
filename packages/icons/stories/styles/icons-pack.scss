@@ -37,10 +37,11 @@ $col-size--xl: 3;
 	overflow: hidden;
 	border-radius: 4px;
 	background: #fff;
+	outline: 1px solid #aaa;
 
 	&__preview {
 		position: relative;
-		background: #184291;
+		background: #000;
 	}
 
 	&__preview-mode {
@@ -70,7 +71,7 @@ $col-size--xl: 3;
 			padding: 0;
 			border: 0;
 			color: #bcbfcb;
-			font: 700 12px/20px "Nunito";
+			font: 700 12px/20px "Roboto";
 			text-transform: uppercase;
 
 			&:last-child {
@@ -95,7 +96,7 @@ $col-size--xl: 3;
 		margin: 0 0 5px;
 		padding: 0;
 		border: 0;
-		font: bold 12px/20px "Nunito";
+		font: bold 12px/20px "Roboto";
 		letter-spacing: 0;
 
 		&:last-child {
