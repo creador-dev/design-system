@@ -1,9 +1,11 @@
 {
 	"npmClient": "npm",
 	"version": "independent",
+	"packages": ["packages/*"],
 	"command": {
 		"publish": {
 			"message": "🚀 Publish changes."
 		}
-	}
+	},
+	"$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }

@@ -33,8 +33,7 @@
     "license": "GPL-2.0",
     "main": "src/index.ts",
     "directories": {
-        "src": "src",
-        "test": "__tests__"
+        "src": "src"
     },
     "files": [
         "dist"
@@ -61,9 +60,8 @@
     },
     "homepage": "https://github.com/creador-dev/design-system#readme",
     "devDependencies": {
-        "jest-axe": "^8.0.0",
         "@testing-library/react": "^14.0.0",
-        "classnames": "^2.3.2"
-    },
-    "clean-package": "../../postpack.config.json"
+        "classnames": "^2.3.2",
+        "jest-axe": "^8.0.0"
+    }
 }
