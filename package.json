@@ -8,7 +8,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "build": "clear && NODE_ENV=production lerna run build"
+        "build": "clear && NODE_ENV=production lerna run build",
+        "deploy": "npm run build && npm run build-storybook && gh-pages -d storybook-static -b docs -m \"🚀 Update docs with latest changes.\""
     },
     "keywords": [],
     "author": "",
@@ -36,6 +37,7 @@
         "storybook": "^7.5.1",
         "tsup": "^7.2.0",
         "typescript": "^5.2.2",
-        "prettier": "^2.8.8"
+        "prettier": "^2.8.8",
+        "gh-pages": "^4.0.0"
     }
 }
