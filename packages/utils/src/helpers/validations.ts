@@ -5,7 +5,7 @@
  *
  * @return {boolean} Returns true if value is null
  */
-const isNull = (value: unknown) => null === value
+const isNull = (value: unknown) => value === null
 
 /**
  * Check if value is undefined
@@ -14,7 +14,7 @@ const isNull = (value: unknown) => null === value
  *
  * @return {boolean} True if value is undefined
  */
-const isUndefined = (value: unknown) => "undefined" === typeof value
+const isUndefined = (value: unknown) => typeof value === 'undefined'
 
 /**
  * Check if value is an object
@@ -24,7 +24,7 @@ const isUndefined = (value: unknown) => "undefined" === typeof value
  * @return {boolean} returns True if value is an object type
  */
 const isObject = (value: unknown) => {
-	return "object" === typeof value && !isArray(value)
+  return typeof value === 'object' && !isArray(value)
 }
 
 /**
@@ -43,7 +43,7 @@ const isArray = (value: unknown) => Array.isArray(value)
  *
  * @return {boolean} Returns true if boolean
  */
-const isBoolean = (value: unknown) => "boolean" === typeof value
+const isBoolean = (value: unknown) => typeof value === 'boolean'
 
 /**
  * Check if value is number
@@ -53,7 +53,7 @@ const isBoolean = (value: unknown) => "boolean" === typeof value
  * @return {boolean} Returns true if value is number
  */
 const isNumber = (value: unknown) => {
-	return "number" === typeof value || !Number.isNaN(value)
+  return typeof value === 'number' || !Number.isNaN(value)
 }
 
 /**
@@ -62,7 +62,7 @@ const isNumber = (value: unknown) => {
  * @param {unknown} value Value to be checked
  * @return {boolean} Returns true if variable is function
  */
-const isFunction = (value: unknown) => "function" === typeof value
+const isFunction = (value: unknown) => typeof value === 'function'
 
 /**
  * Check if value is string
@@ -70,7 +70,7 @@ const isFunction = (value: unknown) => "function" === typeof value
  * @param {unknown} value Value to be checked
  * @return {boolean} Returns true if a variable is string
  */
-const isString = (value: unknown) => "string" === typeof value
+const isString = (value: unknown) => typeof value === 'string'
 
 /**
  * Check if string is empty
@@ -78,7 +78,7 @@ const isString = (value: unknown) => "string" === typeof value
  * @param {string | undefined} value string to be checked
  * @return {boolean} Returns true if string is blank
  */
-const isEmpty = (value: string | undefined) => "" === value
+const isEmpty = (value: string | undefined) => value === ''
 
 /**
  * Capitalize text
@@ -88,7 +88,7 @@ const isEmpty = (value: string | undefined) => "" === value
  * @return {string} Capitalize text
  */
 const capitalizeText = (string: string) => {
-	return string?.charAt(0)?.toUpperCase() + string?.slice(1)
+  return string?.charAt(0)?.toUpperCase() + string?.slice(1)
 }
 
 /**
@@ -101,28 +101,28 @@ const capitalizeText = (string: string) => {
  * @return {any|undefined} - The content or undefined.
  */
 const conditionalValue = (
-	condition: boolean,
-	content: any = null,
-	fallback: any = undefined,
+  condition: boolean,
+  content: any = null,
+  fallback: any = undefined
 ): any | undefined => {
-	// use condition as content if passed
-	if (isNull(content)) {
-		content = condition
-	}
+  // use condition as content if passed
+  if (isNull(content)) {
+    content = condition
+  }
 
-	return !!condition ? content : fallback
+  return condition ? content : fallback
 }
 
 export {
-	isNull,
-	isUndefined,
-	isObject,
-	isArray,
-	isBoolean,
-	isNumber,
-	isEmpty,
-	capitalizeText,
-	isFunction,
-	isString,
-	conditionalValue,
+  isNull,
+  isUndefined,
+  isObject,
+  isArray,
+  isBoolean,
+  isNumber,
+  isEmpty,
+  capitalizeText,
+  isFunction,
+  isString,
+  conditionalValue
 }

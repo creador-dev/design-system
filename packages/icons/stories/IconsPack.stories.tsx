@@ -9,6 +9,17 @@ import { capitalizeText } from "@crd/utils"
 import "../dist/css/icons.css"
 import "./styles/icons-pack.scss"
 
+interface IconType {
+	category: string
+	search: string
+	name: string
+	alt: string
+	checked: boolean
+	id: string
+}
+
+type PageType = Pick<IconType, "category" | "search">
+
 export default {
 	title: "Icons/Page",
 	parameters: {
@@ -77,13 +88,13 @@ const ListIcons = {
 	},
 }
 
-const Page = ({ category, search }) => {
+const Page = ({ category, search }: PageType) => {
 	const groups = Object.keys(ListIcons).map((group, groupIndex) => {
 		const catName = ListIcons[group].name
 		const objIcons = ListIcons[group].icons
 
 		const filteredobjIcons =
-			0 !== search.trim().length
+			search.trim().length !== 0
 				? Object.entries(objIcons).reduce((newObj, [key, val]) => {
 						const name = val.name.toLowerCase()
 						if (name.includes(search.toLowerCase())) {
@@ -98,7 +109,7 @@ const Page = ({ category, search }) => {
 			(icon, iconIndex) => {
 				return (
 					<Fragment>
-						{("all" === category || group === category) && (
+						{(category === "all" || group === category) && (
 							<li key={`${groupIndex}--${iconIndex}`}>
 								<div className="csb-icons__content">
 									<IconsCard
@@ -126,9 +137,15 @@ const Page = ({ category, search }) => {
 	)
 }
 
-const IconsCard = ({ category, name, alt, checked, id }) => {
-	const hasTagAlternative = "boolean" === typeof alt
-	const hasTagChecked = "boolean" === typeof checked
+const IconsCard = ({
+	category,
+	name,
+	alt,
+	checked,
+	id,
+}: Omit<IconType, "search">) => {
+	const hasTagAlternative = typeof alt === "boolean"
+	const hasTagChecked = typeof checked === "boolean"
 
 	const camelCased = (id ?? "").replace(/-([a-z])/g, function (g) {
 		return g[1].toUpperCase()

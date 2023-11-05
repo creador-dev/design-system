@@ -1,8 +1,8 @@
 // Export all from events.ts
-export * from "./helpers/events"
+export * from './helpers/events'
 
 // Export all from function.ts
-export * from "./helpers/functions"
+export * from './helpers/functions'
 
 // Export all from validations.ts
-export * from "./helpers/validations"
+export * from './helpers/validations'

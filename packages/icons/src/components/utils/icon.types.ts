@@ -1,72 +1,72 @@
-import React from "react"
+import type React from 'react'
 
 /**
  * Interface representing the properties of an icon component.
  */
 interface IconProps {
-	/**
+  /**
 	 * Custom element type to be used for rendering the icon.
 	 */
-	as?: string
-	/**
+  as?: string
+  /**
 	 * Additional CSS class name for the icon.
 	 */
-	className?: string
-	/**
+  className?: string
+  /**
 	 * Svg title
 	 */
-	title?: string
-	/**
+  title?: string
+  /**
 	 * View box attribute for the icon.
 	 */
-	viewBox?: string
-	/**
+  viewBox?: string
+  /**
 	 * SVG icon height
 	 */
-	height?: number
-	/**
+  height?: number
+  /**
 	 * SVG icon width
 	 */
-	width?: number
-	/**
+  width?: number
+  /**
 	 * SVG icon size
 	 */
-	size?: "sm" | "md" | "lg"
-	/**
+  size?: 'sm' | 'md' | 'lg'
+  /**
 	 * SVG fill color
 	 */
-	fill?: string
-	/**
+  fill?: string
+  /**
 	 * SVG icon state (color)
 	 */
-	color?: "" | "neutral" | "informative" | "success" | "warning" | "critical"
-	/**
+  color?: '' | 'neutral' | 'informative' | 'success' | 'warning' | 'critical'
+  /**
 	 * When click on icon
 	 *
 	 * @return {{}}
 	 */
-	onClick?: () => void
-	/**
+  onClick?: () => void
+  /**
 	 * Children nodes of the icon.
 	 */
-	children?: React.ReactNode
+  children?: React.ReactNode
 }
 
 interface IconBuildParams {
-	/**
+  /**
 	 * The icon `svg` viewBox.
 	 *
 	 * @default "0 0 24 24"
 	 */
-	viewBox?: string
-	/**
+  viewBox?: string
+  /**
 	 * SVG icon title
 	 */
-	title?: string
-	/**
+  title?: string
+  /**
 	 * Default props automatically passed to the component; overridable.
 	 */
-	defaultProps?: IconProps
+  defaultProps?: IconProps
 }
 
 export type { IconProps, IconBuildParams }

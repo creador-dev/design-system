@@ -1,4 +1,4 @@
-import { MouseEvent, KeyboardEvent } from "react"
+import { type MouseEvent, type KeyboardEvent } from 'react'
 
 /**
  * Use this for onKeyDown callback when making a div or span element clickable
@@ -7,14 +7,14 @@ import { MouseEvent, KeyboardEvent } from "react"
  * @param {() => void}    callback
  */
 const handleOnKeyDown = (
-	event: React.KeyboardEvent<HTMLDivElement | HTMLSpanElement>,
-	callback?: (() => void) | undefined,
+  event: React.KeyboardEvent<HTMLDivElement | HTMLSpanElement>,
+  callback?: (() => void) | undefined
 ) => {
-	if (event.key === "Enter" || event.key === " ") {
-		if (callback) {
-			callback()
-		}
-	}
+  if (event.key === 'Enter' || event.key === ' ') {
+    if (callback) {
+      callback()
+    }
+  }
 }
 
 /**
@@ -25,17 +25,17 @@ const handleOnKeyDown = (
  * @param {boolean}                                      preventDefault  - If true, prevents the default behavior associated with the event.
  */
 const handleEventDefault = (
-	e: MouseEvent<unknown> | KeyboardEvent<unknown>,
-	stopPropagation?: boolean,
-	preventDefault?: boolean,
+  e: MouseEvent<unknown> | KeyboardEvent<unknown>,
+  stopPropagation?: boolean,
+  preventDefault?: boolean
 ) => {
-	if (stopPropagation) {
-		e?.stopPropagation()
-	}
+  if (stopPropagation) {
+    e?.stopPropagation()
+  }
 
-	if (preventDefault) {
-		e?.preventDefault()
-	}
+  if (preventDefault) {
+    e?.preventDefault()
+  }
 }
 
 export { handleEventDefault, handleOnKeyDown }

@@ -1,11 +1,11 @@
 /**
  * Interface for generating icon parameters.
  */
-import React, { Children, forwardRef, ReactNode } from "react"
+import React, { Children, forwardRef, type ReactNode } from "react"
 import { isEmpty } from "@crd/utils"
 
 import { Icon } from "./icon"
-import { IconBuildParams, IconProps } from "./icon.types"
+import { type IconBuildParams, type IconProps } from "./icon.types"
 
 /**
  * Generate an icon component based on the provided options.
@@ -20,7 +20,7 @@ const iconBuild = (
 	const { viewBox = "0 0 24 24", title, defaultProps = {} } = options
 
 	// Check if the `path` has a single value
-	const isSinglePath: boolean = "string" === typeof path
+	const isSinglePath: boolean = typeof path === "string"
 
 	// Decide path variable
 	path = isSinglePath ? path : Children.toArray(path)
@@ -34,7 +34,7 @@ const iconBuild = (
 			{...props}
 			aria-hidden={true}
 		>
-			{!isSinglePath && "string" !== typeof path ? (
+			{!isSinglePath && typeof path !== "string" ? (
 				path?.map((p, index) => (
 					<path key={index} fill="currentColor" d={p as string} />
 				))
