@@ -28,7 +28,7 @@ const { input, output, name } = require(path.join(
 ))
 
 const packageName = name
-const fileName = packageName.replace("@crd/", "")
+const fileName = packageName.replace("@crdev/", "")
 
 const inputSource = path.join(currentWorkingPath, input)
 const inputStyles = path.join(inputSource, "scss/" + fileName + ".scss")

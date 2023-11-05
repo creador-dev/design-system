@@ -2,7 +2,7 @@
  * Interface for generating icon parameters.
  */
 import React, { Children, forwardRef, type ReactNode } from "react"
-import { isEmpty } from "@crd/utils"
+import { isEmpty } from "@crdev/utils"
 
 import { Icon } from "./icon"
 import { type IconBuildParams, type IconProps } from "./icon.types"

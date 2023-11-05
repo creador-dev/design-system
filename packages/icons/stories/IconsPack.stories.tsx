@@ -3,7 +3,7 @@ import React, { Fragment, Children } from "react"
 // Import required components.
 import dedent from "dedent"
 import docs from "./IconsPack.mdx"
-import { capitalizeText } from "@crd/utils"
+import { capitalizeText } from "@crdev/utils"
 
 // Import required styles.
 import "../dist/css/icons.css"

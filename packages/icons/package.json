@@ -1,5 +1,5 @@
 {
-    "name": "@crd/icons",
+    "name": "@crdev/icons",
     "version": "0.0.1",
     "description": "Icons.",
     "keywords": [],
@@ -57,6 +57,7 @@
         "ts-dedent": "^2.2.0"
     },
     "dependencies": {
-        "@crd/utils": "^0.0.1"
-    }
+        "@crdev/utils": "^0.0.1"
+    },
+    "clean-package": "./postpack.config.json"
 }
