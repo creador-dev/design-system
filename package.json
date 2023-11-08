@@ -6,8 +6,8 @@
     "scripts": {
         "format-files": "clear && npx prettier --write .",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build",
+        "storybook": "npm run build && storybook dev -p 6006",
+        "build-storybook": "npm run build && storybook build",
         "build": "clear && NODE_ENV=production lerna run build",
         "lint": "eslint --ext .ts,.tsx ./packages/",
         "changeset": "changeset",
