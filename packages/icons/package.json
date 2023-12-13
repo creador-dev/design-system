@@ -1,6 +1,6 @@
 {
     "name": "@crdev/icons",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Icons.",
     "keywords": [],
     "author": "Pawan Kumar (https://creador.dev)",
@@ -30,15 +30,14 @@
         "url": "git+https://github.com/creador-dev/design-system.git"
     },
     "scripts": {
-        "prepare": "npm run clean",
         "clean": "rm -rf dist && rm -rf lib",
         "build": "gulp",
         "prepack": "clean-package",
         "postpack": "clean-package restore",
-        "publish:test": "npm run prepare && npm version prerelease --git-tag-version=false && npm pack",
-        "publish:patch": "npm run prepare && npm version patch -m \"🚀 Publish Icons Pack %s\" && npm publish",
-        "publish:minor": "npm run prepare && npm version minor -m \"🚀 Publish Icons Pack %s\" && npm publish",
-        "publish:major": "npm run prepare && npm version major -m \"🚀 Publish Icons Pack %s\" && npm publish"
+        "publish:test": "npm version prerelease --git-tag-version=false && npm pack",
+        "publish:patch": "npm version patch -m \"🚀 Publish Icons Pack %s\" && npm publish",
+        "publish:minor": "npm version minor -m \"🚀 Publish Icons Pack %s\" && npm publish",
+        "publish:major": "npm version major -m \"🚀 Publish Icons Pack %s\" && npm publish"
     },
     "bugs": {
         "url": "https://github.com/creador-dev/design-system/issues"
