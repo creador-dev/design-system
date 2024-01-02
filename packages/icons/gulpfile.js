@@ -48,7 +48,7 @@ const banner = [
 	" * CRDEV",
 	`${fileName !== "crd-icons" ? " * Icons Pack (" + fileName + ")" : ""}`,
 	" * ",
-	" * Copyright 2023 Incsub (https://creador.dev)",
+	" * Copyright 2023 Creador (https://creador.dev)",
 	" * Licensed under GPL-2.0 (http://www.gnu.org/licenses/gpl-2.0.html)",
 	" */",
 	"",
@@ -85,15 +85,6 @@ function compile() {
 		})
 }
 
-function copyFonts() {
-	return gulp
-		.src(inputSource + "/fonts/**")
-		.pipe(gulp.dest(outputSource + "/fonts"))
-		.on("finish", function () {
-			console.log("📦 " + packageName + " finished copying files.")
-		})
-}
-
 function copySVG() {
 	return gulp
 		.src(inputSource + "/svg/**")
@@ -118,4 +109,4 @@ function tsBuild(cb) {
  * @since 1.0.0
  */
 
-exports.default = gulp.series(tsBuild, compile, copyFonts, copySVG)
+exports.default = gulp.series(tsBuild, compile, copySVG)

@@ -3,7 +3,7 @@ import React, { Fragment, Children } from "react"
 // Import required components.
 import dedent from "dedent"
 import docs from "./IconsPack.mdx"
-import { capitalizeText } from "@crdev/utils"
+import Icons, { IconsNamesType } from "@crdev/icons"
 
 // Import required styles.
 import "../dist/css/icons.css"
@@ -15,7 +15,7 @@ interface IconType {
 	name: string
 	alt: string
 	checked: boolean
-	id: string
+	id: IconsNamesType
 }
 
 type PageType = Pick<IconType, "category" | "search">
@@ -38,7 +38,7 @@ const ListIcons = {
 	navigation: {
 		name: "Navigation",
 		icons: {
-			"arrow-right": {
+			ArrowRight: {
 				name: "Arrow Right",
 			},
 		},
@@ -46,22 +46,22 @@ const ListIcons = {
 	social: {
 		name: "Social Media",
 		icons: {
-			email: {
+			Email: {
 				name: "Email",
 			},
-			facebook: {
+			Facebook: {
 				name: "Facebook",
 			},
-			instagram: {
+			Instagram: {
 				name: "Instagram",
 			},
-			twitter: {
+			Twitter: {
 				name: "Twitter",
 			},
-			linkedin: {
+			Linkedin: {
 				name: "Linkedin",
 			},
-			youtube: {
+			Youtube: {
 				name: "Youtube",
 			},
 		},
@@ -69,19 +69,19 @@ const ListIcons = {
 	global: {
 		name: "Global",
 		icons: {
-			bell: {
+			Bell: {
 				name: "Bell",
 			},
-			comment: {
+			Comment: {
 				name: "Comment",
 			},
-			locations: {
+			Locations: {
 				name: "Locations",
 			},
-			phone: {
+			Phone: {
 				name: "Phone",
 			},
-			search: {
+			Search: {
 				name: "Search",
 			},
 		},
@@ -147,13 +147,12 @@ const IconsCard = ({
 	const hasTagAlternative = typeof alt === "boolean"
 	const hasTagChecked = typeof checked === "boolean"
 
-	const camelCased = (id ?? "").replace(/-([a-z])/g, function (g) {
-		return g[1].toUpperCase()
-	})
+	const iconId = (id ?? "").replace(
+		/[A-Z]/g,
+		(match, index) => (index === 0 ? "" : "-") + match.toLowerCase(),
+	)
 
-	const sample = dedent`<span class="crdicons crdicons--${id}" aria-hidden="true"></span>`
-
-	const compSample = dedent`<${capitalizeText(camelCased)}/>`
+	const compSample = dedent`<${id}/>`
 
 	return (
 		<div className="csb-icon">
@@ -177,10 +176,12 @@ const IconsCard = ({
 					</div>
 				)}
 				<div className="csb-icon__preview-icon">
-					<span
-						className={`crdicons crdicons--${id}`}
-						style={{ fontSize: 64 }}
-					/>
+					{Icons[id] &&
+						React.createElement(Icons[id], {
+							title: id,
+							width: 64,
+							height: 64,
+						})}
 				</div>
 			</div>
 
@@ -191,19 +192,15 @@ const IconsCard = ({
 
 				<div className="csb-icon__data-block">
 					<h3 className="csb-icon__data-title">SVG Name</h3>
+					{iconId}
 					{/* <Code theme="ghost" fullWidth={true}>
 						{id}
 					</Code> */}
 				</div>
 
 				<div className="csb-icon__data-block">
-					<h3 className="csb-icon__data-title">HTML Code</h3>
-					{/* <Code fullWidth={true} className="csb-icon__code">
-						{sample}
-					</Code> */}
-				</div>
-				<div className="csb-icon__data-block">
 					<h3 className="csb-icon__data-title">React Component</h3>
+					{compSample}
 					{/* <Code fullWidth={true} className="csb-icon__code">
 						{compSample}
 					</Code> */}

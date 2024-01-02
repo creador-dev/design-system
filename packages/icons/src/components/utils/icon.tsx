@@ -62,6 +62,7 @@ const Icon = forwardRef<"svg", IconProps>(
 			width,
 			onClick,
 			fill,
+			...props,
 		}
 
 		// Make icon accessible if onClick prop exists
