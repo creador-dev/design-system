@@ -159,20 +159,18 @@ const IconsCard = ({
 			<div className="csb-icon__preview">
 				{(hasTagAlternative || hasTagChecked) && (
 					<div className="csb-icon__preview-mode">
-						{/* {hasTagAlternative && alt && (
-							<Tag color="yellow">Alternative</Tag>
+						{hasTagAlternative && alt && (
+							<span color="yellow">Alternative</span>
 						)}
 						{hasTagChecked && (
 							<Fragment>
 								{checked ? (
-									<Tag color="green" light={true}>
-										Check
-									</Tag>
+									<span color="green">Check</span>
 								) : (
-									<Tag light={true}>Uncheck</Tag>
+									<span>Uncheck</span>
 								)}
 							</Fragment>
-						)} */}
+						)}
 					</div>
 				)}
 				<div className="csb-icon__preview-icon">
@@ -192,18 +190,12 @@ const IconsCard = ({
 
 				<div className="csb-icon__data-block">
 					<h3 className="csb-icon__data-title">SVG Name</h3>
-					{iconId}
-					{/* <Code theme="ghost" fullWidth={true}>
-						{id}
-					</Code> */}
+					<code>{iconId}</code>
 				</div>
 
 				<div className="csb-icon__data-block">
 					<h3 className="csb-icon__data-title">React Component</h3>
-					{compSample}
-					{/* <Code fullWidth={true} className="csb-icon__code">
-						{compSample}
-					</Code> */}
+					<code>{compSample}</code>
 				</div>
 			</div>
 		</div>

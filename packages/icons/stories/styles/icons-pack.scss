@@ -41,7 +41,8 @@ $col-size--xl: 3;
 
 	&__preview {
 		position: relative;
-		background: #000;
+		background: #f8fafd;
+		outline: 1px solid #aaa;
 	}
 
 	&__preview-mode {
@@ -59,7 +60,7 @@ $col-size--xl: 3;
 	&__preview-icon {
 		display: block;
 		padding: 20px;
-		color: #ffffff;
+		color: #5f6368;
 		text-align: center;
 	}
 
